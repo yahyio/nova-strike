@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #05060c;
+  overflow: hidden;
+  font-family: "Orbitron", sans-serif;
+  color: #e8f4ff;
+  user-select: none;
+}
+
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.2rem 1.8rem;
+  pointer-events: none;
+}
+
+.hud-left,
+.hud-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-right {
+  text-align: right;
+}
+
+.label {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #5a7d9e;
+}
+
+#score,
+#best {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-shadow: 0 0 18px rgba(90, 200, 255, 0.5);
+}
+
+.hud-mid {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  color: #7df9ff;
+  text-shadow: 0 0 20px rgba(125, 249, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.hud-mid.show {
+  opacity: 1;
+}
+
+.lives {
+  position: fixed;
+  bottom: 1.4rem;
+  left: 1.8rem;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.lives i {
+  width: 16px;
+  height: 16px;
+  background: #7df9ff;
+  clip-path: polygon(50% 0, 100% 100%, 50% 78%, 0 100%);
+  filter: drop-shadow(0 0 6px rgba(125, 249, 255, 0.8));
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  background: rgba(5, 6, 12, 0.82);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h1 {
+  font-size: clamp(3rem, 11vw, 6.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  background: linear-gradient(#e8f4ff, #4aa8d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 30px rgba(125, 249, 255, 0.35));
+}
+
+.overlay p {
+  color: #5a7d9e;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}
+
+.overlay button {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #05060c;
+  background: #7df9ff;
+  border: none;
+  padding: 1em 3.2em;
+  cursor: pointer;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.overlay button:hover {
+  transform: scale(1.06);
+  filter: brightness(1.15) drop-shadow(0 0 24px rgba(125, 249, 255, 0.6));
+}

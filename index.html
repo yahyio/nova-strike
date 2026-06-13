@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA STRIKE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="game"></canvas>
+
+<div class="hud">
+  <div class="hud-left">
+    <span class="label">Score</span>
+    <span id="score">0</span>
+  </div>
+  <div class="hud-mid" id="wave-banner"></div>
+  <div class="hud-right">
+    <span class="label">Best</span>
+    <span id="best">0</span>
+  </div>
+</div>
+
+<div class="lives" id="lives"></div>
+
+<div class="overlay" id="menu">
+  <h1>NOVA<br>STRIKE</h1>
+  <p>WASD / arrows to fly · space to fire · P to pause</p>
+  <button id="start-btn">Launch</button>
+</div>
+
+<div class="overlay hidden" id="gameover">
+  <h1>SHIP<br>LOST</h1>
+  <p id="final-score"></p>
+  <button id="retry-btn">Fly again</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
